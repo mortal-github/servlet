@@ -1,0 +1,16 @@
+- `HttpServletRequest`的`getRequestURI()`获取请求URL。
+- `HttpServletRequest`的`getContextPath()`获取环境路径。
+- `HttpServletRequest`的`getServletPath()`可获得servlet路径。
+- `HttpServletRequest`的`getPathInfo()`获取路径信息。
+- 在Servlet4.0 `HttpServletRequest`新增了`getHttpServletMapping()`方法，可以取得`javax.servlet.http.HttpServletMapping`操作对象。
+- `HttpServletMapping`对象的`getMappingMatch()`会传回`javax.servlet.http.MappingMatch`枚举值。成员有：
+    - `CONTEXT_ROOT`：环境根目录。
+    - `DEFAULT`: 预设servlet。
+    - `EXACT`: 完全匹配。
+    - `EXTENSION`: 扩展映射。
+    - `PATH`: 路径映射。
+- `HttpServletMapping`对象的`getMatchValue()`返回实际符合的比对值。
+- `HttpServletMapping`对象的`getPattern()`返回对比时的URL模式。
+- 通过程序控制取得`WEB-INF`的资源
+    >浏览器不可以直接请求/WEB-INF中的资源，但可以通过程序控制取得WEB-INF中的资源。
+    >例如：`ServletContext`的`getResource()`与`getResourceAsStream()`，或者通过`RequestDispatcher`请求调派。

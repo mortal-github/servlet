@@ -43,15 +43,15 @@
         </plugin>
         ```
         2. 配置**maven运行配置**：运行->编辑配置->左上角`+`->maven
-        ![maven运行命令](png/maven运行命令.png)
+        ![maven运行命令](maven运行命令.png)
         3. 通过maven运行配置运行webapp并启动tomcat
-        ![maven运行配置启动webapp](png/maven运行配置启动webapp.png)
+        ![maven运行配置启动webapp](maven运行配置启动webapp.png)
     2. idea社区版使用`smart tomcat`插件(不推荐),使用本地tomcat。
         1. 安装`smart tomcat`插件然后配置`tomcat`运行环境
         2. 配置**smart tomcat运行配置**
-        ![smarttomcat运行配置](png/smarttomcat运行配置.png)
+        ![smarttomcat运行配置](smarttomcat运行配置.png)
         3. 通过smart tomcat运行webapp并启动
-        ![smarttomcat运行配置启动webapp与本地tomcat](png/smarttomcat运行配置启动webapp与本地tomcat.png)
+        ![smarttomcat运行配置启动webapp与本地tomcat](smarttomcat运行配置启动webapp与本地tomcat.png)
 
 3. 参考资料
     - [servlet入门，关键看导入servlet-api](https://www.liaoxuefeng.com/wiki/1252599548343744/1304265949708322)
@@ -134,3 +134,6 @@ public class Main {
     }
 }
 ```
+
+### idea 插件
+[UML绘图](https://my.oschina.net/javazhiyin/blog/4541138)

@@ -3,5 +3,23 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>FirsetServlet</display-name>
+<!--  <default-context-path></default-context-path>-->
+  <!-- welcome-file-list 试验无效，以后记得找出原因-->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>01 编写与设置servlet.md</welcome-file>
+  </welcome-file-list>
+
+  <!--web.xml中的设定可用来覆盖Servlet中标注-->
+  <servlet>
+    <servlet-name>Hello</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.Hello</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hello</servlet-name>
+    <url-pattern>/helloUser</url-pattern>
+  </servlet-mapping>
+
 </web-app>

@@ -2,6 +2,11 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--         xmlns="http:/xmlns.jcp.org/xml/ns/javaee"-->
+<!--         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="4.0">-->
+
 <web-app>
   <display-name>FirsetServlet</display-name>
 <!--  <default-context-path></default-context-path>-->
@@ -11,15 +16,43 @@
     <welcome-file>01 编写与设置servlet.md</welcome-file>
   </welcome-file-list>
 
+  <!--  绝对排序-->
+<!--  <absolute-ordering>-->
+<!--    <name>WebFragment1</name>-->
+<!--    <name>WebFragment2</name>-->
+<!--  </absolute-ordering>-->
+
   <!--web.xml中的设定可用来覆盖Servlet中标注-->
+
+  <!--使用和配置Servlet-->
   <servlet>
     <servlet-name>Hello</servlet-name>
-    <servlet-class>mortal.learn.dev.web.servlet.Hello</servlet-class>
+    <servlet-class>mortal.learn.dev.web.servlet.learn01codingandconfig.Hello</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>Hello</servlet-name>
     <url-pattern>/helloUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Path</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.learn01codingandconfig.Path</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Path</servlet-name>
+    <url-pattern>/path</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Mapping</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.learn01codingandconfig.Mapping</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Mapping</servlet-name>
+    <url-pattern>/mapping/*</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -1,4 +1,4 @@
-package mortal.learn.dev.web.servlet;
+package mortal.learn.dev.web.servlet.learn01codingandconfig;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

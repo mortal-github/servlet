@@ -158,7 +158,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
     <!--web.xml中的设定可用来覆盖Servlet中标注-->
     <servlet>
         <servlet-name>Hello</servlet-name>
-        <servlet-class>mortal.learn.dev.web.servlet.Hello</servlet-class>
+        <servlet-class>mortal.learn.dev.web.servlet.learn01codingandconfig.Hellomortal.learn.dev.web.servlet.learn01codingandconfig.Hello</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -311,7 +311,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 
     <servlet>
         <servlet-name>Hello</servlet-name>
-        <servlet-class>mortal.learn.dev.web.servlet.Hello</servlet-class>
+        <servlet-class>mortal.learn.dev.web.servlet.learn01codingandconfig.Hellomortal.learn.dev.web.servlet.learn01codingandconfig.Hello</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

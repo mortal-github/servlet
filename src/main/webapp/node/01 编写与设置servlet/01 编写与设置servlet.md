@@ -300,7 +300,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 2. `web.xml`可定义的元素，`web-fragment.xml`都可定义。
 3. `web-fragment.xml`的根标签是`<web-fragment>`而不是`<web-app>`。
 ```xml
-<?xml version="1.0" encoding="UTF-8">
+<?xml version="1.0" encoding="UTF-8"?>
 <web-fragment id="WebFragment_ID" version="4.0"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns="http:/xmlns.jcp.org/xml/ns/javaee"

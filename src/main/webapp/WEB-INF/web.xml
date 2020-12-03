@@ -29,6 +29,18 @@
   <request-characet-encoding>UTF-8</request-characet-encoding>
   <response-characet-encoding>UTF-8</response-characet-encoding>
 
+<!--  `web.xml`中设定`HttpSession`默认失效时间，单位是“**分钟**”-->
+  <session-config>
+    <!-- 30 分钟-->
+    <session-timeout>30</session-timeout>
+    <cookie-config>
+      <name>yourJsessionid</name>
+      <secure>true</secure>       <!--只在加密联机中传送-->
+      <http-only>true</http-only><!--不可被JavaScript读取-->
+      <max-age>1800</max-age>     <!--1800秒， 不建议-->
+    </cookie-config>
+  </session-config>
+
   <!-- 可以在web.xml中设置默认的区域和编码对应，如果用setLocale(locale)设置响应标头Content-Language, 那么就会使用对应的字符编码处理响应数据-->
   <locale-encoding-mapping-list>
     <locale-encoding>

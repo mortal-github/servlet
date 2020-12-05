@@ -17,6 +17,7 @@ import java.util.Locale;
 )
 public class ResponseEncoding extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ServletContext servlet_context = getServletContext();

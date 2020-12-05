@@ -16,6 +16,7 @@ import java.io.OutputStream;
 )
 public class ResponseOutputStream extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

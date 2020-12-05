@@ -13,7 +13,7 @@
 
   <!-- welcome-file-list-->
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
     <welcome-file>01 编写与设置servlet.md</welcome-file>
   </welcome-file-list>
 
@@ -26,8 +26,8 @@
   <!--  Servlet4.0 开始，-->
   <!--  可以用<request-characet-encoding>标签处理整个应用程序的请求(体)编码，（URI编码是HTTP服务器处理，不是由容器处理）&ndash;&gt;-->
   <!--  可以用<response-characet-encoding>标签处理整个应用程序的响应编码，（URI编码是HTTP服务器处理，不是由容器处理）&ndash;&gt;-->
-  <request-characet-encoding>UTF-8</request-characet-encoding>
-  <response-characet-encoding>UTF-8</response-characet-encoding>
+    <request-characet-encoding>UTF-8</request-characet-encoding>
+    <response-characet-encoding>UTF-8</response-characet-encoding>
 
 <!--  `web.xml`中设定`HttpSession`默认失效时间，单位是“**分钟**”-->
   <session-config>
@@ -44,7 +44,11 @@
   <!-- 可以在web.xml中设置默认的区域和编码对应，如果用setLocale(locale)设置响应标头Content-Language, 那么就会使用对应的字符编码处理响应数据-->
   <locale-encoding-mapping-list>
     <locale-encoding>
-      <locae>zh_TW</locae>
+      <locale>zh_TW</locale>
+      <encoding>UTF-8</encoding>
+    </locale-encoding>
+    <locale-encoding>
+      <locale>zh_CN</locale>
       <encoding>UTF-8</encoding>
     </locale-encoding>
   </locale-encoding-mapping-list>
@@ -54,19 +58,15 @@
     <extension>pdf</extension>
     <mime-type>application/pdf</mime-type>
   </mime-mapping>
+  <mime-mapping>
+    <extension>html</extension>
+    <mime-type>text/html</mime-type>
+  </mime-mapping>
 
   <!--web.xml中的设定可用来覆盖Servlet中标注-->
 
   <!--使用和配置Servlet-->
-  <servlet>
-    <servlet-name>Hello</servlet-name>
-    <servlet-class>mortal.learn.dev.web.servlet.learn01codingandconfig.Hello</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Hello</servlet-name>
-    <url-pattern>/helloUser</url-pattern>
-  </servlet-mapping>
+
   <!-- Servlet3.0以后，Part对象处理文件，要添加注解@MultipartConfig, 可以在web.xml中配置这个注解的属性-->
 <!--  <servlet>-->
 <!--    <servlet-name>UploadServlet</servlet-name>-->
@@ -78,7 +78,15 @@
 <!--      <max-request-size>10</max-request-size>-->
 <!--    </multipart-config>-->
 <!--  </servlet>-->
-
+  <servlet>
+    <servlet-name>Hello</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.learn01codingandconfig.Hello</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hello</servlet-name>
+    <url-pattern>/helloUser</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>Path</servlet-name>
@@ -99,5 +107,62 @@
     <servlet-name>Mapping</servlet-name>
     <url-pattern>/mapping/*</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RequestParam</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.learn02requestandresponse.RequestParameter</servlet-class>
+    <load-on-startup>4</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestParam</servlet-name>
+    <url-pattern>/request/param</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RequestHeader</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.learn02requestandresponse.RequestHeader</servlet-class>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestHeader</servlet-name>
+    <url-pattern>/request/header</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RequestEncoding</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.learn02requestandresponse.RequestEncoding</servlet-class>
+    <load-on-startup>6</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestEncoding</servlet-name>
+    <url-pattern>/request/encoding</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RequestBody</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.learn02requestandresponse.RequestBody</servlet-class>
+    <load-on-startup>7</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestBody</servlet-name>
+    <url-pattern>/request/body</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RequestPart</servlet-name>
+    <servlet-class>mortal.learn.dev.web.servlet.learn02requestandresponse.RequestPart</servlet-class>
+<!--    <multipart-config>-->
+<!--      <file-size-threshold>10</file-size-threshold>-->
+<!--&lt;!&ndash;      <location>标签无效，原因未知，只有源代码的注解有效&ndash;&gt;-->
+<!--&lt;!&ndash;      <loaction>C:\Workspace\git\servlet\src\main\webapp\temp</loaction>&ndash;&gt;-->
+<!--      <max-file-size>595129</max-file-size>-->
+<!--      <max-request-size>595130</max-request-size>-->
+<!--    </multipart-config>-->
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestPart</servlet-name>
+    <url-pattern>/request/part</url-pattern>
+  </servlet-mapping>
+
 
 </web-app>

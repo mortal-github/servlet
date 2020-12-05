@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 @WebServlet(
         name="Path",
         urlPatterns = "/",
-        loadOnStartup=2
+        loadOnStartup = 2
 )
 public class Path extends HttpServlet {
 

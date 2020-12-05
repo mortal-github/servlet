@@ -200,21 +200,22 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 - `HttpServletRequest`的`getRequestURI()`获取请求URL。
 
 #### 环境路径
-    >环境路径是容器**挑选哪个Web应用程序的依据**。（一个容器上可能部署多个Web应用程序）
-    - `HttpServletRequest`的`getContextPath()`获取环境路径。
-    - 如果应用程序环境路径与Web网站环境**根路径**相同，则应用程序**环境路径为空字符串**。如果不是，则应用程序环境路径**以`/`开头，不包括`/`结尾**。
+>环境路径是容器 **挑选哪个Web应用程序的依据** 。（一个容器上可能部署多个Web应用程序）
+- `HttpServletRequest`的`getContextPath()`获取环境路径。
+- 如果应用程序环境路径与Web网站环境**根路径**相同，则应用程序**环境路径为空字符串**。如果不是，则应用程序环境路径**以`/`开头，不包括`/`结尾**。
 
 #### URL模式与servletPath
-    >一旦决定是哪个Web应用程序来处理请求，接下来就会进行Servlet对应
-    >**Servlet必须设置URL模式**，可以设置的格式如下：
-    - **路径映射(Path mapping)**: 以`/`开头，以`/*`结尾的URL模式
-        >例如：`/guest/*`，若为`/guest/text.view`、`/guest/home.view`等以`/guest/`开头，都会交给该Servlet处理。
-    - **扩展映射(extension mapping)**: 以`*.`开头的URL模式，
-        >例如：`*.view`，则以.view结尾的请求都会交给该Servlet处理。
-    - **环境根目录映射**：**空字符串""***是个特殊的URL模式，对应至环境根目录，也就是 **`/`请求** 。
-        >例如：若环境根目录为app，则`http://host:port/app/`请求。路径信息是`/`，而Servlet路径与环境路径**都是空字符串**。
-    - **预设Servlet模式**：仅包好`/`的URL模式，当找不到适合的URL模式对应时，就会使用预设Servlet。
-    - **完全匹配(Exac match)**: 不符合以上设置的其他字符串，都要做路径的严格对应。
+>一旦决定是哪个Web应用程序来处理请求，接下来就会进行Servlet对应
+>**Servlet必须设置URL模式**，可以设置的格式如下：
+- **路径映射(Path mapping)**: 以`/`开头，以`/*`结尾的URL模式
+    >例如：`/guest/*`，若为`/guest/text.view`、`/guest/home.view`等以`/guest/`开头，都会交给该Servlet处理。
+- **扩展映射(extension mapping)**: 以`*.`开头的URL模式，
+    >例如：`*.view`，则以.view结尾的请求都会交给该Servlet处理。
+- **环境根目录映射**：空字符串 **""** 是个特殊的URL模式，对应至环境根目录，也就是 **`/`请求** 。
+    >例如：若环境根目录为app，则`http://host:port/app/`请求。路径信息是`/`，而Servlet路径与环境路径**都是空字符串**。
+- **预设Servlet模式**：仅包好`/`的URL模式，当找不到适合的URL模式对应时，就会使用预设Servlet。
+- **完全匹配(Exac match)**: 以`/`开头的，不符合以上设置的其他字符串，都要做路径的严格对应。
+    >完全匹配的URL，必须以`/`开始。
 
 **URL模式冲突解决**：
 如果URL模式设置比对的规则在某些URL请求上有所重叠，对比规则是**从最严格的URL模式开始服务**。

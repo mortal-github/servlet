@@ -35,9 +35,9 @@
     <session-timeout>30</session-timeout>
     <cookie-config>
       <name>yourJsessionid</name>
-      <secure>true</secure>       <!--只在加密联机中传送-->
+<!--      <secure>true</secure>       &lt;!&ndash;只在加密联机中传送&ndash;&gt;-->
       <http-only>true</http-only><!--不可被JavaScript读取-->
-      <max-age>1800</max-age>     <!--1800秒， 不建议-->
+<!--      <max-age>-1</max-age>     &lt;!&ndash;1800秒， 不建议&ndash;&gt;-->
     </cookie-config>
   </session-config>
 
